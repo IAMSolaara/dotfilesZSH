@@ -28,22 +28,22 @@ alias vbam=visualboyadvance-m
 
 export MPD_HOST=172.16.7.1
 
-source /usr/share/nvm/init-nvm.sh
-nvm use node > /dev/null
+#source /usr/share/nvm/init-nvm.sh
+#nvm use node > /dev/null
 
 # stuff for GenDev (sega genesis development)
 export GENDEV=/opt/gendev
 export GDK=/opt/gendev
 
 # stuff for perl and cpan install thingy?
-PATH="/home/lorecast162/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/lorecast162/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/lorecast162/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/lorecast162/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/lorecast162/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # stuff for emscripten
-alias activate_emsdk='source "/home/lorecast162/emsdk/emsdk_env.sh" > /dev/null 2>&1'
+alias activate_emsdk='source "$HOME/emsdk/emsdk_env.sh" > /dev/null 2>&1'
 
 # stuff for android stuff I guess
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -53,5 +53,5 @@ export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools
 command -v paru > /dev/null && alias yay=paru ||
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/lorecast162/.sdkman"
-[[ -s "/home/lorecast162/.sdkman/bin/sdkman-init.sh" ]] && source "/home/lorecast162/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
