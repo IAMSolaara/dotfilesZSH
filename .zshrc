@@ -52,6 +52,14 @@ export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools
 
 command -v paru > /dev/null && alias yay=paru ||
 
+#flutter stuff
+if [[ -d $HOME/.local/flutter ]]; then 
+	export FLUTTER_SDK_PATH="$HOME/.local/flutter"
+	export DART_SDK_PATH="$FLUTTER_SDK_PATH/bin/cache/dart-sdk"
+	export PATH="$PATH:$FLUTTER_SDK_PATH/bin"
+	export PATH="$PATH:$DART_SDK_PATH/bin"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
